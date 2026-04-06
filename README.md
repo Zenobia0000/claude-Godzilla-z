@@ -43,7 +43,7 @@ claude
 ├── commands/        (17)  # Slash Commands
 ├── output-styles/   (16)  # 產出格式
 ├── settings.json          # 主設定
-├── CLAUDE.md              # ��案指令
+├── CLAUDE.md              # 專案指令
 ├── statusline.sh          # StatusLine（Windows）
 └── statusline-linux.sh    # StatusLine（Linux/WSL2）
 ```
@@ -69,7 +69,7 @@ claude
 
 ## Skills（12 個，MECE 架構）
 
-依開發生命週期組織，統一 `sunnydata-` ���綴。按需載入。
+依開發生命週期組織，統一 `sunnydata-` 前綴。按需載入。
 
 | 階段 | Skill | 用途 |
 | :--- | :---- | :--- |
@@ -78,7 +78,7 @@ claude
 | BUILD (UI) | **sunnydata-shadcn-ui** | shadcn/ui 元件管理 |
 | BUILD+TEST | **sunnydata-testing** | TDD + Unit/Integration/E2E (Playwright) |
 | VERIFY (安全) | **sunnydata-security** | OWASP 分類 + checklist + 語言特定實踐 |
-| VERIFY (審查) | **sunnydata-code-review** | 驗證 → 發起 review ��� 消化回饋 |
+| VERIFY (審查) | **sunnydata-code-review** | 驗證 → 發起 review → 消化回饋 |
 | SHIP (基礎設施) | **sunnydata-infrastructure** | Docker + CI/CD + 部署策略 |
 | SHIP (分支) | **sunnydata-branch-lifecycle** | worktree 建立 → commit 審計 → PR/merge 收尾 |
 | DEBUG | **sunnydata-debugging** | 四階段結構化除錯 |
@@ -92,7 +92,7 @@ claude
 
 ## Git 工作流
 
-本模板強制嚴謹的 git 協作流程，適用於開源專案和團���協作。
+本模板強制嚴謹的 git 協作流程，適用於開源專案和團隊協作。
 
 ### 5 道品質關卡
 
@@ -113,7 +113,7 @@ Merge → 刪除遠端分支 → Done
 ### 分支策略
 
 ```
-main ──���── feat/xxx ──── PR ──→ main
+main ──┬── feat/xxx ──── PR ──→ main
        ├── fix/yyy  ──── PR ──→ main
        └── chore/zzz ─── PR ──→ main
 ```
@@ -148,7 +148,7 @@ main ──���── feat/xxx ──── PR ──→ main
 🦁 Opus 4.6 │ ❄️ 26% │ project (main*) │ 15m │ $12.50
 ```
 
-Tesla High-Contrast 主題。Linux 使用 `statusline-linux.sh`��
+Tesla High-Contrast 主題。Linux 使用 `statusline-linux.sh`。
 
 ```jsonc
 // settings.json
