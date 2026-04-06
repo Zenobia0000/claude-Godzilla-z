@@ -1,8 +1,19 @@
-# Claude Code GUNDAM
+<div align="center">
 
-> **版本:** v5.0 | **更新:** 2026-04-06 | **平台:** Windows / Linux (WSL2)
+<img src="assets/hero.png" alt="Claude Code Godzilla" width="720" />
 
-Claude Code 開發配置模板。複製到新專案即可使用。
+# Claude Code Godzilla
+
+**進倉。啟動。征服混沌的程式碼戰場。**
+
+[![Version](https://img.shields.io/badge/version-v5.0-blue)]()
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20(WSL2)-lightgrey)]()
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+</div>
+
+> 一套開箱即用的 Claude Code 開發配置模板 — 12 個 MECE Skills、5-Gate Git 品質管線、Tesla StatusLine。
+> 複製到新專案，像駕駛員進倉一樣，直接啟動。
 
 ---
 
