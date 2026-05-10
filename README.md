@@ -31,6 +31,18 @@ cp .mcp.json.windows.example .mcp.json # Windows
 claude
 ```
 
+### 全域共用 Skills（選用）
+
+預設 skills 只在當前專案內可用。若想讓**所有專案**都能呼叫某個 skill，可建立全域 symlink：
+
+```bash
+# 範例：把 sunnydata-architecture-review 開放給所有專案
+ln -s "$(pwd)/.claude/skills/sunnydata-architecture-review" \
+      ~/.claude/skills/sunnydata-architecture-review
+```
+
+優點：檔案實體只在專案內（git 追得到、可隨專案版控），全域目錄只放捷徑 — 改一處兩邊同步。Windows 使用 `mklink /D`。
+
 ---
 
 ## 結構
@@ -38,7 +50,7 @@ claude
 ```
 .claude/
 ├── rules/           (8)   # 永遠生效的規則
-├── skills/          (12)  # 按需載入的領域知識（sunnydata-*）
+├── skills/          (13)  # 按需載入的領域知識（sunnydata-*）
 ├── agents/          (13)  # 專業 Agent
 ├── commands/        (17)  # Slash Commands
 ├── output-styles/   (16)  # 產出格式
@@ -67,7 +79,7 @@ claude
 
 ---
 
-## Skills（12 個，MECE 架構）
+## Skills（13 個，MECE 架構）
 
 依開發生命週期組織，統一 `sunnydata-` 前綴。按需載入。
 
@@ -79,6 +91,7 @@ claude
 | BUILD+TEST | **sunnydata-testing** | TDD + Unit/Integration/E2E (Playwright) |
 | VERIFY (安全) | **sunnydata-security** | OWASP 分類 + checklist + 語言特定實踐 |
 | VERIFY (審查) | **sunnydata-code-review** | 驗證 → 發起 review → 消化回饋 |
+| VERIFY (架構) | **sunnydata-architecture-review** | 三階段 smells → principles → fixes 架構級審查 |
 | SHIP (基礎設施) | **sunnydata-infrastructure** | Docker + CI/CD + 部署策略 |
 | SHIP (分支) | **sunnydata-branch-lifecycle** | worktree 建立 → commit 審計 → PR/merge 收尾 |
 | DEBUG | **sunnydata-debugging** | 四階段結構化除錯 |
@@ -162,6 +175,7 @@ Tesla High-Contrast 主題。Linux 使用 `statusline-linux.sh`。
 
 | 版本 | 日期 | 變更 |
 | :--- | :--- | :--- |
+| v5.1 | 2026-05-10 | 新增 `sunnydata-architecture-review` skill（三階段 smells/principles/fixes 流程＋100 條行話分類索引）、README 加入全域 symlink 共用說明 |
 | v5.0 | 2026-04-06 | MECE 重構 skills (23→12, sunnydata-)、Git 5-gate 工作流、WHY/WHAT/IMPACT commit 標準、PR pre-flight |
 | v4.3 | 2026-03-24 | 時間追蹤、`/time-log`、StatusLine 持久化 |
 | v4.2 | 2026-03-16 | 跨平台（Windows/Linux）、Agent 全 opus |
