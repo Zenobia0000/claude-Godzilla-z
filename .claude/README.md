@@ -25,8 +25,7 @@
 ├── hooks/                     # Hook 腳本庫
 ├── taskmaster-data/           # 持久化資料（WBS、時間日誌）
 ├── context/                   # 跨 Agent 上下文共享
-├── coordination/              # Agent 協調配置
-└── plugins/                   # Plugin 配置
+└── coordination/              # Agent 協調配置
 ```
 
 ---
